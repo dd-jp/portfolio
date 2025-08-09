@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# Personal Portfolio
 
-```sh
-yarn create astro@latest -- --template minimal
-```
+This is a personal portfolio website built with [Astro](https://astro.build), a modern static site generator that delivers lightning-fast performance. The site features a clean, responsive design with sections for skills, work experience, and education.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Features
 
-## 🚀 Project Structure
+- Responsive design using Tailwind CSS
+- Dark mode support
+- Tabbed sections for Skills, Experience, and Education
+- Fast performance with Astro's static site generation
+- Clean and modern UI
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Tech Stack
+
+- [Astro](https://astro.build)
+- [Tailwind CSS](https://tailwindcss.com)
+- TypeScript
+
+## 🏗️ Project Structure
 
 ```text
 /
 ├── public/
+│   └── profile-image.jpg
 ├── src/
+│   ├── components/
+│   │   ├── Education.astro
+│   │   ├── Header.astro
+│   │   ├── Hero.astro
+│   │   ├── Skills.astro
+│   │   ├── Tabs.astro
+│   │   └── Work.astro
+│   ├── layouts/
+│   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
 └── package.json
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `yarn install`             | Installs dependencies                            |
-| `yarn dev`             | Starts local dev server at `localhost:4321`      |
-| `yarn build`           | Build your production site to `./dist/`          |
-| `yarn preview`         | Preview your build locally, before deploying     |
-| `yarn astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `yarn astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
