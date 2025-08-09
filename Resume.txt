@@ -1,0 +1,91 @@
+
+
+Deepak David Joseph Periyanayagam  |  Email:  dpkdavid@yahoo.com  |  Mobile: +4474973550038  | Page 1 of 2
+
+ Deepak David Joseph Periyanayagam
+Lead UI Developer
+Glasgow, United Kingdom, +44 -7497355038, dpkdavid@yahoo.com
+
+
+PROFILE  Results -driven Lead UI Developer with more than 10 years of comprehensive experience in front -end
+development, including over a year of specialized expertise in React Native. I excel at building high -
+performance mobile applications and scalable web solutions using React technologies. Known for my
+ability to lead cross -functional teams, I thrive in agile environments, delivering innovative, user -
+centric products that meet evolving business needs.
+
+
+EMPLOYMENT HISTORY
+Mar 202 4 — Present  Lead UI Engineer, JP Morgan & Chase  Glasgow, UK
+CCOR
+● Design, architect, develop and test high performing user interface using  React, React query,
+React Testing Library, Jest  and Cypress , to automate, manage and track Compliance
+monitoring tasks.
+● Develop a reusable component library using  Yarn workspaces, React, Typescript  and Vite to
+be used across multiple applications developed by wider team.
+Nov 2022 — Feb 2024  AVP, Barclays  Glasgow, UK
+DEVHUB
+● Develop and maintain a mobile application based on  React Native  for Android/iOS  devices
+using  react -native -paper  component library with Jest for unit testing and  Maestro  for e2e
+testing.
+● Develop and maintain a documentation website using  React, Typescript, Docusaurus  and Vite
+Apr 2020 — Oct 2022  Senior Associate, JP Morgan & Chase  Glasgow, UK
+Asset Service Convergence
+● Design, architect, develop and test high performing user interface using  React, Redux, NextJS,
+an internally developed React based  component library, TypeScript, Jest, React Testing
+Library  and Cypress  which interacts with  REST Micro -services  and Web Sockets
+Jun 2018 — Mar 2020  Senior Associate, JP Morgan & Chase  Glasgow, UK
+Software Engineering Efficiency
+● Lead a team of 4 members and mentor junior team members to get up to speed with the
+application architecture and design.
+● Design, architect, develop and test high performing presentation layers using  React, Redux,
+High charts,  an internally developed React based UI toolkit,  Jest and React testing library
+which interacts with WebSocket APIs.
+● Configure Continuous Integration and Continuous Deployment to  Cloud Foundry  using  Git
+Web hooks  and internally developed pattern build for  Jenkins .
+Mar 2017 — May 2018  Senior Associate, JP Morgan & Chase  Glasgow, UK
+PHEME
+● Design, architect, develop and test a full stack spring boot web application using  React, Java,
+Hibernate  and Junit  that displays compliance data collected from a third -party survey tool.
+● Configure CI/ CD  to Cloud Foundry  using  Git Web hooks  and Jenkins
+
+
+Deepak David Joseph Periyanayagam  |  Email:  dpkdavid@yahoo.com  |  Mobile: +4474973550038  | Page 2 of 2
+
+
+Sep 2015 — Feb 2017  Associate, JP Morgan & Chase  Glasgow, UK
+Workflow Automation
+● Develop and test a full stack spring boot application using  AngularJS, Java, Hibernate, Junit
+and Cucumber  that handles margin calls automation and management .
+
+Jul 2011 — Sep 2012  Systems Engineer, Infosys Limited  Chennai, India
+Replication monitoring
+● Design and develop a replication monitoring tool using  Java, Shell, Perl, HTML5  and CSS3
+that provides live feed on replication across multiple servers, also sends notification in case of an
+error
+Jun 2010 — Jun 2011  Systems Engineer, Infosys Limited  Chennai, India
+Asset management automation
+● Automate digital assets migration from legacy system into a Digital Asset Management tool
+using  C# and ASP.Net
+
+
+EDUCATION
+Sep 2012 — Sep 2013  Master of Science in Microelectronics System
+Design, University of Southampton  Southampton, UK
+Graduated with Distinction
+Jun 2006 — Jun 2010  Bachelor of Engineering in Electronics and
+Communication, Karunya University  Coimbatore, India
+Graduated with Distinction
+
+
+SKILLS  ReactJS  Expert   Appium  Experienced
+React Native  Expert   Maestro  Experienced
+TypeScript  Expert   Java  Skilful
+JavaScript  Expert   C# Skilful
+HTML5  Expert   Git Expert
+CSS Expert   Cloud Foundry  Experienced
+Jest Expert   Confluence  Experienced
+Cypress  Expert   JIRA  Experienced
+
+
+LANGUAGES  English  Highly proficient   Tamil  Native speaker
+

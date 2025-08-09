@@ -1,0 +1,97 @@
+---
+const experience = [
+  {
+    company: "JP Morgan & Chase",
+    role: "Software Engineer III",
+    applicationName: "Central Desktop",
+    period: "Mar 2024 — Present",
+    bullets: [
+      "Design, architect, develop and test high-performing UIs using React, React Query, TypeScript, Jest and Cypress.",
+      "Built a reusable component library with Yarn workspaces, React, TypeScript and Vite for cross-team use.",
+      "Led cross-functional delivery for compliance monitoring applications (CCOR).",
+    ],
+  },
+  {
+    company: "Barclays",
+    role: "Assistant Vice President",
+    applicationName: "Developer Hub",
+    period: "Nov 2022 — Feb 2024",
+    bullets: [
+      "Developed and maintained a React Native mobile app for Android/iOS using react-native-paper.",
+      "Built documentation website with Docusaurus, TypeScript and Vite.",
+    ],
+  },
+  {
+    company: "JP Morgan & Chase",
+    role: "Senior Associate",
+    applicationName: "Asset Service Convergence",
+    period: "Apr 2020 — Oct 2022",
+    bullets: [
+      "Built enterprise React apps (Next.js, Redux, TypeScript) interfacing with REST microservices and WebSockets.",
+      "Focused on performance, testing strategy and reliability at scale.",
+    ],
+  },
+  {
+    company: "JP Morgan & Chase",
+    role: "Senior Associate",
+    applicationName: "Software Engineering Efficiency",
+    period: "Jun 2018 — Mar 2020",
+    bullets: [
+      "Led a team of 4; mentored junior engineers and improved onboarding.",
+      "Delivered presentation layers using Highcharts and internal UI toolkits; configured CI/CD to Cloud Foundry.",
+    ],
+  },
+  {
+    company: "Infosys Limited",
+    role: "Systems Engineer",
+    applicationName: "Replication Monitoring",
+    period: "Jul 2011 — Sep 2012",
+    bullets: [
+      "Built replication monitoring tools and automation for enterprise systems using Java, Shell and HTML5.",
+    ],
+  },
+];
+---
+
+<section class="py-10" id="work">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-4 mb-8">
+      <svg class="w-8 h-8 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Work Experience</h2>
+    </div>
+
+    <div class="space-y-8">
+      {experience.map((exp) => (
+        <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 hover:bg-gray-100 dark:hover:bg-gray-800/70 transition-colors duration-300">
+          <div class="flex items-start justify-between mb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{exp.role}</h3>
+                {exp.applicationName && (
+                  <span class="text-sm px-2 py-0.5 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-full">
+                    {exp.applicationName}
+                  </span>
+                )}
+              </div>
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                <span>{exp.company}</span>
+                <span class="text-gray-400 dark:text-gray-600">•</span>
+                <span class="text-sm">{exp.period}</span>
+              </div>
+            </div>
+          </div>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            {exp.bullets.map((bullet) => (
+              <li class="flex items-start">
+                <span class="text-blue-500 dark:text-blue-400 mr-2">•</span>
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
