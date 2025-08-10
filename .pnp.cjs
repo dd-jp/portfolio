@@ -28,6 +28,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["@astrojs/tailwind", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:6.0.2"],\
+          ["@types/react", "npm:19.1.9"],\
           ["astro", "npm:5.12.9"],\
           ["tailwindcss", "npm:3.4.17"]\
         ],\
@@ -1137,6 +1138,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/react", [\
+      ["npm:19.1.9", {\
+        "packageLocation": "../../.yarn/berry/cache/@types-react-npm-19.1.9-c921662040-10c0.zip/node_modules/@types/react/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.1.9"],\
+          ["csstype", "npm:3.1.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/unist", [\
       ["npm:3.0.3", {\
         "packageLocation": "../../.yarn/berry/cache/@types-unist-npm-3.0.3-1c20461f2e-10c0.zip/node_modules/@types/unist/",\
@@ -1801,6 +1812,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/cssesc-npm-3.0.0-15ec56f86f-10c0.zip/node_modules/cssesc/",\
         "packageDependencies": [\
           ["cssesc", "npm:3.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["csstype", [\
+      ["npm:3.1.3", {\
+        "packageLocation": "../../.yarn/berry/cache/csstype-npm-3.1.3-e9a1c85013-10c0.zip/node_modules/csstype/",\
+        "packageDependencies": [\
+          ["csstype", "npm:3.1.3"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3946,6 +3966,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["portfolio", "workspace:."],\
           ["@astrojs/tailwind", "virtual:3786d9363fd0a547cdeba13dbbd7739095de182e2f1aa37c74f8398253205a5b62b2735c6799681aabf1f7716a4d0562fe89843678033b5bdce0191960fb23a9#npm:6.0.2"],\
+          ["@types/react", "npm:19.1.9"],\
           ["astro", "npm:5.12.9"],\
           ["tailwindcss", "npm:3.4.17"]\
         ],\
