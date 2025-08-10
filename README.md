@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-This is a personal portfolio website built with [Astro](https://astro.build), a modern static site generator that delivers lightning-fast performance. The site features a clean, responsive design with sections for skills, work experience, and education.
+This is a personal portfolio website built with [Astro](https://astro.build), a modern static site generator that delivers lightning-fast performance. The site features a clean, responsive design with sections for skills, work experience, and education. The site is deployed and hosted on [Netlify](https://www.netlify.com) as a static site.
 
 ## 🚀 Features
 
