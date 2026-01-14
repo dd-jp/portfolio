@@ -33,14 +33,3 @@
     </div>
   </div>
 </header>
-
-<script>
-  const themeToggle = document.getElementById('theme-toggle');
-
-  themeToggle?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.contains('dark');
-    document.dispatchEvent(new CustomEvent('theme-change', {
-      detail: isDark ? 'light' : 'dark'
-    }));
-  });
-</script>
