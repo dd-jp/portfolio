@@ -10,22 +10,13 @@
       </a>
 
       <div class="flex items-center space-x-4">
-        <a href="/Deepak_David_Resume.pdf"
-           download
-           class="inline-flex items-center px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a2 2 0 002 2h14a2 2 0 002-2v-3" />
-          </svg>
-          Resume
-        </a>
-
-        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-          <!-- Sun icon -->
-          <svg id="light-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors" aria-label="Toggle dark mode">
+          <!-- Sun icon (shown in dark mode) -->
+          <svg id="light-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <!-- Moon icon -->
-          <svg id="dark-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <!-- Moon icon (shown in light mode) -->
+          <svg id="dark-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: block;">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
@@ -33,3 +24,50 @@
     </div>
   </div>
 </header>
+
+<script>
+  function updateThemeToggleIcon() {
+    const lightIcon = document.getElementById('light-icon');
+    const darkIcon = document.getElementById('dark-icon');
+
+    if (document.documentElement.classList.contains('dark')) {
+      // Dark mode is on, show sun icon
+      lightIcon.style.display = 'block';
+      darkIcon.style.display = 'none';
+    } else {
+      // Light mode is on, show moon icon
+      lightIcon.style.display = 'none';
+      darkIcon.style.display = 'block';
+    }
+  }
+
+  // Initialize icon on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    updateThemeToggleIcon();
+  });
+
+  // Handle theme toggle button clicks
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+
+      // Update icon display
+      updateThemeToggleIcon();
+
+      // Dispatch custom event for any other components listening
+      document.dispatchEvent(new CustomEvent('theme-change', {
+        detail: document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+      }));
+    });
+  }
+</script>
+
