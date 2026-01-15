@@ -1,23 +1,25 @@
 ---
 const tabs = [
+  { id: 'architectural-work', label: 'Architectural Work' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' }
 ];
 ---
 
-<div class="sticky top-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-800 z-40">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <nav class="justify-center flex space-x-8" aria-label="Tabs">
-      {tabs.map((tab) => (
-        <button
-          data-tab={tab.id}
-          class="tab-button px-3 py-4 text-sm font-medium border-b-2 border-transparent hover:border-gray-300 dark:hover:border-gray-600 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300"
-          aria-selected="false"
-        >
-          {tab.label}
-        </button>
-      ))}
+<div class="sticky top-16 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 py-4">
+  <div class="flex justify-center">
+    <nav class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-full shadow-lg border border-gray-200 dark:border-gray-800 px-2 py-2 flex gap-1" aria-label="Content tabs">
+  {tabs.map((tab) => (
+    <button
+      data-tab={tab.id}
+      class="tab-button px-4 py-2 text-xs sm:text-sm font-medium rounded-full transition-all duration-200 border-2 border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+      aria-selected="false"
+      aria-controls={tab.id}
+    >
+      {tab.label}
+    </button>
+  ))}
     </nav>
   </div>
 </div>
@@ -30,8 +32,10 @@ const tabs = [
     sections.forEach(section => {
       if (section.id === sectionId) {
         section.classList.remove('hidden');
+        section.setAttribute('aria-hidden', 'false');
       } else {
         section.classList.add('hidden');
+        section.setAttribute('aria-hidden', 'true');
       }
     });
   }
@@ -43,14 +47,14 @@ const tabs = [
       // Update button states
       buttons.forEach(btn => {
         btn.setAttribute('aria-selected', 'false');
-        btn.classList.remove('border-blue-500', 'dark:border-blue-400', 'text-blue-600', 'dark:text-blue-400');
-        btn.classList.add('border-transparent');
+        btn.classList.remove('bg-blue-500', 'dark:bg-blue-600', 'text-white', 'border-blue-500', 'dark:border-blue-400');
+        btn.classList.add('text-gray-600', 'dark:text-gray-400');
       });
 
       // Highlight active tab
       button.setAttribute('aria-selected', 'true');
-      button.classList.remove('border-transparent');
-      button.classList.add('border-blue-500', 'dark:border-blue-400', 'text-blue-600', 'dark:text-blue-400');
+      button.classList.remove('text-gray-600', 'dark:text-gray-400');
+      button.classList.add('bg-blue-500', 'dark:bg-blue-600', 'text-white', 'border-blue-500', 'dark:border-blue-400');
 
       if (tabId) {
         showSection(tabId);
@@ -63,4 +67,24 @@ const tabs = [
   if (firstButton) {
     firstButton.click();
   }
+
+  // Keyboard navigation
+  buttons.forEach((button, index) => {
+    button.addEventListener('keydown', (e: KeyboardEvent) => {
+      let nextIndex = index;
+
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        nextIndex = (index + 1) % buttons.length;
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        nextIndex = (index - 1 + buttons.length) % buttons.length;
+      }
+
+      if (nextIndex !== index) {
+        (buttons[nextIndex] as HTMLButtonElement).click();
+        (buttons[nextIndex] as HTMLButtonElement).focus();
+      }
+    });
+  });
 </script>
