@@ -2,13 +2,14 @@
 const experience = [
   {
     company: "JP Morgan & Chase",
-    role: "Software Engineer III",
-    applicationName: "Central Desktop",
+    role: "Lead UI Engineer",
+    applicationName: "CCOR",
     period: "Mar 2024 — Present",
+    location: "Glasgow, UK",
     bullets: [
-      "Design, architect, develop and test high-performing UIs using React, React Query, TypeScript, Jest and Cypress.",
-      "Built a reusable component library with Yarn workspaces, React, TypeScript and Vite for cross-team use.",
-      "Led cross-functional delivery for compliance monitoring applications (CCOR).",
+      "Spearheading the UI architecture for enterprise-grade compliance monitoring applications, establishing reusable component library using Yarn Workspaces, React, TypeScript, and Vite.",
+      "Architected high-performance user interfaces using React, React Query, React Testing Library, Jest, and Cypress for automating and tracking compliance monitoring tasks.",
+      "Standardized UI patterns across multiple applications for wider engineering teams, improving development velocity and consistency.",
     ],
   },
   {
@@ -16,9 +17,11 @@ const experience = [
     role: "Assistant Vice President",
     applicationName: "Developer Hub",
     period: "Nov 2022 — Feb 2024",
+    location: "Glasgow, UK",
     bullets: [
-      "Developed and maintained a React Native mobile app for Android/iOS using react-native-paper.",
-      "Built documentation website with Docusaurus, TypeScript and Vite.",
+      "Directed technical strategy for comprehensive Developer Hub, unifying mobile and web documentation standards across platforms.",
+      "Architected and maintained React Native mobile application (Android/iOS) using react-native-paper component library with Jest unit testing and Maestro e2e testing.",
+      "Designed and deployed documentation website using React, TypeScript, Docusaurus, and Vite, improving developer onboarding efficiency.",
     ],
   },
   {
@@ -26,9 +29,11 @@ const experience = [
     role: "Senior Associate",
     applicationName: "Asset Service Convergence",
     period: "Apr 2020 — Oct 2022",
+    location: "Glasgow, UK",
     bullets: [
-      "Built enterprise React apps (Next.js, Redux, TypeScript) interfacing with REST microservices and WebSockets.",
-      "Focused on performance, testing strategy and reliability at scale.",
+      "Architected enterprise-scale React applications using Next.js, Redux, TypeScript with internally-developed component libraries interfacing with REST microservices and WebSocket APIs.",
+      "Established comprehensive testing strategy leveraging React Testing Library, Jest, and Cypress for high reliability and performance at scale.",
+      "Designed and implemented high-performance user interfaces serving multiple internal applications with complex data requirements.",
     ],
   },
   {
@@ -36,9 +41,33 @@ const experience = [
     role: "Senior Associate",
     applicationName: "Software Engineering Efficiency",
     period: "Jun 2018 — Mar 2020",
+    location: "Glasgow, UK",
     bullets: [
-      "Led a team of 4; mentored junior engineers and improved onboarding.",
-      "Delivered presentation layers using Highcharts and internal UI toolkits; configured CI/CD to Cloud Foundry.",
+      "Led a team of 4 engineers, mentoring junior team members on application architecture, design patterns, and best practices.",
+      "Architected high-performance presentation layers using React, Redux, Highcharts, and internally-developed UI toolkits with Jest and React Testing Library.",
+      "Configured CI/CD pipelines to Cloud Foundry using Git webhooks and Jenkins, establishing infrastructure-as-code patterns.",
+    ],
+  },
+  {
+    company: "JP Morgan & Chase",
+    role: "Senior Associate",
+    applicationName: "PHEME",
+    period: "Mar 2017 — May 2018",
+    location: "Glasgow, UK",
+    bullets: [
+      "Designed and architected full-stack Spring Boot application using React, Java, Hibernate, and JUnit for displaying compliance data from third-party survey tools.",
+      "Implemented CI/CD pipeline to Cloud Foundry using Git webhooks and Jenkins for automated deployments.",
+    ],
+  },
+  {
+    company: "JP Morgan & Chase",
+    role: "Associate",
+    applicationName: "Workflow Automation",
+    period: "Sep 2015 — Feb 2017",
+    location: "Glasgow, UK",
+    bullets: [
+      "Developed and tested full-stack Spring Boot application using AngularJS, Java, Hibernate, JUnit, and Cucumber for margin calls automation and management.",
+      "Implemented comprehensive test coverage using JUnit and Cucumber for reliable business-critical automation workflows.",
     ],
   },
   {
@@ -46,8 +75,21 @@ const experience = [
     role: "Systems Engineer",
     applicationName: "Replication Monitoring",
     period: "Jul 2011 — Sep 2012",
+    location: "Chennai, India",
     bullets: [
-      "Built replication monitoring tools and automation for enterprise systems using Java, Shell and HTML5.",
+      "Designed and developed replication monitoring tool using Java, Shell, Perl, HTML5, and CSS3 providing real-time feed across multiple enterprise servers.",
+      "Implemented intelligent error notification system for proactive issue resolution in distributed systems.",
+    ],
+  },
+  {
+    company: "Infosys Limited",
+    role: "Systems Engineer",
+    applicationName: "Asset Management Automation",
+    period: "Jun 2010 — Jun 2011",
+    location: "Chennai, India",
+    bullets: [
+      "Automated digital assets migration from legacy systems into Digital Asset Management tool using C# and ASP.Net.",
+      "Reduced manual migration effort by 80% through comprehensive automation strategy.",
     ],
   },
 ];
@@ -75,10 +117,16 @@ const experience = [
                   </span>
                 )}
               </div>
-              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-400 text-sm">
                 <span>{exp.company}</span>
                 <span class="text-gray-400 dark:text-gray-600">•</span>
-                <span class="text-sm">{exp.period}</span>
+                <span>{exp.period}</span>
+                {exp.location && (
+                  <>
+                    <span class="text-gray-400 dark:text-gray-600">•</span>
+                    <span>{exp.location}</span>
+                  </>
+                )}
               </div>
             </div>
           </div>

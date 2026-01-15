@@ -1,0 +1,66 @@
+---
+const caseStudies = [
+  {
+    title: "Enterprise Compliance Dashboard",
+    description: "Refactored legacy views into high-performance data grids, reducing load times by 40%.",
+    tags: ["Next.js", "TanStack Query", "High-Volume Data"],
+  },
+  {
+    title: "Reusable Component Library",
+    description: "Architected enterprise-wide component library using Yarn Workspaces and Vite, standardizing UI patterns across 5+ internal applications and reducing development time by 35%.",
+    tags: ["React", "TypeScript", "Vite", "Yarn Workspaces"],
+  },
+  {
+    title: "Developer Hub Mobile & Web",
+    description: "Unified mobile (React Native) and web documentation platform using Docusaurus, improving developer onboarding efficiency by 50%.",
+    tags: ["React Native", "Docusaurus", "iOS/Android"],
+  },
+  {
+    title: "Asset Service Convergence",
+    description: "Architected complex financial data visualization with real-time WebSocket updates, handling 10,000+ daily transactions with sub-second performance.",
+    tags: ["React", "Redux", "REST APIs", "WebSockets"],
+  },
+  {
+    title: "Workflow Automation System",
+    description: "Built full-stack margin calls automation platform streamlining financial operations, processing 500+ requests daily with 99.9% reliability.",
+    tags: ["Spring Boot", "AngularJS", "Java", "Automation"],
+  },
+  {
+    title: "Enterprise Monitoring Infrastructure",
+    description: "Designed distributed replication monitoring system providing real-time alerts across 50+ enterprise servers with intelligent error notification.",
+    tags: ["Java", "Shell", "Distributed Systems", "Real-time Monitoring"],
+  },
+];
+---
+
+<section class="py-10" id="case-studies">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center gap-4 mb-12">
+      <svg class="w-8 h-8 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+      </svg>
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Selected Architectural Work</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {caseStudies.map((study) => (
+        <div class="bg-white dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700 overflow-hidden hover:border-blue-400 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">{study.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm leading-relaxed">
+              {study.description}
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {study.tags.map((tag) => (
+                <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 text-xs font-medium rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
