@@ -14,19 +14,22 @@ import Education from '../components/Education.astro';
     <Header />
     <main>
       <Hero />
-      <CaseStudies />
       <Tabs />
 
-      <div class="tab-section" id="skills">
+      <div class="tab-section" id="skills" aria-hidden="true">
         <Skills />
       </div>
 
-      <div class="tab-section" id="experience">
+      <div class="tab-section" id="experience" aria-hidden="true">
         <Work />
       </div>
 
-      <div class="tab-section" id="education">
+      <div class="tab-section" id="education" aria-hidden="true">
         <Education />
+      </div>
+
+      <div class="tab-section" id="architectural-work" aria-hidden="true">
+        <CaseStudies />
       </div>
     </main>
   </div>
