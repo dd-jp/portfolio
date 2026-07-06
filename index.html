@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Deepak David — Lead UI Engineer & Web Architect</title>
+    <meta
+      name="description"
+      content="Deepak David — Lead UI Engineer & Web Architect. 11 years architecting secure, scalable web platforms for UK financial services (JP Morgan Chase, Barclays). React, Next.js, TypeScript, design systems, micro-frontends & AI-driven engineering."
+    />
+    <meta name="author" content="Deepak David Joseph Periyanayagam" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Deepak David — Lead UI Engineer & Web Architect" />
+    <meta
+      property="og:description"
+      content="Engineering leader & Web Architect with 11 years in UK financial services. React, TypeScript, design systems, micro-frontends & AI-driven engineering."
+    />
+    <meta property="og:image" content="/profile-image.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Prevent theme flash: set the class before paint -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.toggle('dark', dark);
+        } catch (e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
