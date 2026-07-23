@@ -10,28 +10,28 @@
   html {
     scroll-behavior: smooth;
     /* Offset anchored scroll so sticky navbar doesn't cover section headings */
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply bg-white text-slate-800 antialiased dark:bg-ink-950 dark:text-slate-300;
+    @apply bg-frost-100 text-ink antialiased dark:bg-void-900 dark:text-frost-100/85;
     font-family: 'Inter', system-ui, sans-serif;
     min-height: 100vh;
   }
 
   ::selection {
-    @apply bg-brand-500/30 text-slate-900 dark:text-white;
+    @apply bg-signal-400/30 text-ink dark:text-white;
   }
 
   /* Custom focus ring for keyboard users */
   :focus-visible {
-    @apply outline-none ring-2 ring-brand-400 ring-offset-2 ring-offset-white dark:ring-offset-ink-950;
+    @apply outline-none ring-2 ring-signal-400 ring-offset-2 ring-offset-frost-100 dark:ring-offset-void-900;
   }
 
   h1, h2, h3, h4 {
-    @apply font-display tracking-tight text-slate-900 dark:text-white;
+    @apply font-display tracking-tight text-ink dark:text-frost-50;
   }
 }
 
@@ -40,29 +40,50 @@
     @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
   }
 
-  /* Animated gradient text used for accented headline words */
-  .text-gradient {
-    @apply bg-gradient-to-r from-brand-400 via-accent-violet to-accent-cyan bg-clip-text text-transparent;
-    background-size: 200% auto;
+  /* Glass panel: frosted, large radius, soft top-edge highlight like light hitting curved glass */
+  .glass {
+    @apply relative overflow-hidden rounded-glass border border-white/40 bg-white/50 shadow-[0_8px_32px_-8px_rgba(20,25,60,0.15)] backdrop-blur-xl transition-all duration-300 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)];
   }
 
-  /* Frosted card surface */
-  .card {
-    @apply rounded-2xl border border-slate-200/80 bg-white/70 backdrop-blur-sm transition-colors duration-300 dark:border-white/10 dark:bg-white/[0.03];
+  .glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 40%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  .dark .glass::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 40%);
   }
 
-  .card-hover {
-    @apply hover:border-brand-400/60 hover:shadow-lg hover:shadow-brand-500/5 dark:hover:border-brand-400/40;
+  .glass-hover {
+    @apply hover:-translate-y-0.5 hover:border-signal-400/50 hover:bg-white/65 hover:shadow-[0_16px_40px_-12px_rgba(77,141,255,0.35)] dark:hover:bg-white/[0.09] dark:hover:shadow-[0_16px_40px_-12px_rgba(77,141,255,0.25)];
   }
 
+  /* Pill data tag on glass */
   .chip {
-    @apply inline-flex items-center rounded-full border border-slate-200 bg-slate-100/80 px-2.5 py-1 text-xs font-medium text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300;
+    @apply inline-flex items-center rounded-chip border border-white/50 bg-white/40 px-2.5 py-1 font-mono text-[11px] font-medium tracking-tight text-ink/70 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.05] dark:text-frost-100/70;
   }
 
-  /* Subtle dotted grid background for section depth */
-  .bg-grid {
-    background-image: radial-gradient(currentColor 1px, transparent 1px);
-    background-size: 28px 28px;
+  /* Primary glossy action: signal-blue glass with a specular top highlight */
+  .btn-glass-primary {
+    @apply relative overflow-hidden rounded-full bg-gradient-to-b from-signal-400 to-signal-600 px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_-6px_rgba(77,141,255,0.55)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_12px_32px_-6px_rgba(77,141,255,0.65)];
+  }
+  .btn-glass-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0) 55%);
+  }
+
+  /* Secondary glossy action: frosted glass outline */
+  .btn-glass {
+    @apply rounded-full border border-white/50 bg-white/40 px-6 py-3 text-sm font-semibold text-ink backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/60 dark:border-white/15 dark:bg-white/[0.06] dark:text-frost-50 dark:hover:bg-white/[0.1];
   }
 }
 

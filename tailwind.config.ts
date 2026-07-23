@@ -7,49 +7,55 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['"Space Grotesk"', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
-        // Deep "ink" palette for the dark theme surfaces
-        ink: {
-          950: '#080a12',
-          900: '#0b0e18',
-          850: '#0f1320',
-          800: '#141a2b',
-          700: '#1c2438',
+        // Void — dark-mode ambient backdrop for the glass to float over
+        void: {
+          950: '#07070D',
+          900: '#0A0A14',
+          800: '#11121F',
+          700: '#181A2C',
         },
-        // Brand accent — electric indigo → violet gradient stops
-        brand: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
+        // Frost — light-mode ambient backdrop (cool pearl, not warm cream)
+        frost: {
+          50: '#FBFCFF',
+          100: '#F2F4FA',
+          200: '#E6E9F5',
         },
-        accent: {
-          cyan: '#22d3ee',
-          violet: '#a855f7',
-          fuchsia: '#e879f9',
+        // Signal blue — the one accent used for text/UI: links, active states, primary actions
+        signal: {
+          300: '#8FB8FF',
+          400: '#6BA0FF',
+          500: '#4D8DFF',
+          600: '#3A6FE0',
         },
+        // Ambient-only hues — used strictly in background blobs/glow, never as text or borders
+        aurora: '#9B6BFF',
+        mint: '#4DE8D0',
+        ink: '#161822',
+        cloud: '#8991A8',
       },
       maxWidth: {
         content: '72rem',
       },
+      borderRadius: {
+        glass: '1.75rem',
+        chip: '0.9rem',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
       keyframes: {
-        'gradient-pan': {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
+        'blob-float': {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(4%, -6%) scale(1.08)' },
+          '66%': { transform: 'translate(-3%, 4%) scale(0.95)' },
         },
-        'blob-drift': {
-          '0%, 100%': { transform: 'translate(0px, 0px) scale(1)' },
-          '33%': { transform: 'translate(30px, -40px) scale(1.1)' },
-          '66%': { transform: 'translate(-25px, 25px) scale(0.95)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
+        shimmer: {
+          '0%': { backgroundPosition: '-150% 0' },
+          '100%': { backgroundPosition: '150% 0' },
         },
         'fade-in': {
           from: { opacity: '0' },
@@ -57,13 +63,10 @@ export default {
         },
       },
       animation: {
-        'gradient-pan': 'gradient-pan 8s ease infinite',
-        'blob-drift': 'blob-drift 18s ease-in-out infinite',
-        float: 'float 6s ease-in-out infinite',
+        'blob-float': 'blob-float 22s ease-in-out infinite',
+        'blob-float-slow': 'blob-float 30s ease-in-out infinite',
+        shimmer: 'shimmer 3.5s linear infinite',
         'fade-in': 'fade-in 0.8s ease forwards',
-      },
-      backgroundSize: {
-        '300%': '300% 300%',
       },
     },
   },

@@ -25,36 +25,32 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'border-b border-slate-200/70 bg-white/80 backdrop-blur-lg dark:border-white/5 dark:bg-ink-950/80'
-          : 'border-b border-transparent'
-      }`}
-    >
-      <nav className="container-content flex h-16 items-center justify-between" aria-label="Primary">
-        <a
-          href="#top"
-          className="font-display text-lg font-bold tracking-tight text-slate-900 dark:text-white"
-        >
-          Deepak<span className="text-brand-500 dark:text-brand-400">.</span>
+    <header className="fixed inset-x-0 top-3 z-50 px-3 sm:top-4 sm:px-6">
+      {/* Floating glass dock */}
+      <nav
+        className={`mx-auto flex h-14 max-w-content items-center justify-between rounded-full border px-4 backdrop-blur-xl transition-all duration-300 sm:px-5 ${
+          scrolled
+            ? 'border-white/50 bg-white/60 shadow-[0_8px_32px_-12px_rgba(20,25,60,0.25)] dark:border-white/10 dark:bg-white/[0.08] dark:shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6)]'
+            : 'border-white/30 bg-white/30 dark:border-white/5 dark:bg-white/[0.03]'
+        }`}
+        aria-label="Primary"
+      >
+        <a href="#top" className="font-display text-lg font-bold tracking-tight text-ink dark:text-frost-50">
+          Deepak<span className="text-signal-500">.</span>
         </a>
 
         {/* Desktop nav */}
         <ul className="hidden items-center gap-1 md:flex">
-          {site.nav.map((item, i) => (
+          {site.nav.map((item) => (
             <li key={item.id}>
               <a
                 href={`#${item.id}`}
-                className={`group flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium transition-colors ${
+                className={`relative flex items-center rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
                   active === item.id
-                    ? 'text-brand-600 dark:text-brand-400'
-                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                    ? 'bg-signal-500/15 text-signal-600 dark:text-signal-300'
+                    : 'text-ink/60 hover:text-ink dark:text-frost-100/60 dark:hover:text-frost-50'
                 }`}
               >
-                <span className="font-mono text-xs text-brand-400/70">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
                 {item.label}
               </a>
             </li>
@@ -62,17 +58,13 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a
-            href={site.resumePath}
-            download
-            className="hidden rounded-full border border-brand-500/40 px-4 py-1.5 text-sm font-medium text-brand-600 transition-colors hover:bg-brand-500/10 dark:text-brand-400 sm:inline-flex"
-          >
+          <a href={site.resumePath} download className="btn-glass hidden !px-4 !py-1.5 !text-xs sm:inline-flex">
             Résumé
           </a>
           <ThemeToggle theme={theme} onToggle={onToggleTheme} />
           <button
             type="button"
-            className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 text-slate-600 dark:border-white/10 dark:text-slate-300 md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-full border border-white/40 text-ink/70 dark:border-white/10 dark:text-frost-100/70 md:hidden"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((o) => !o)}
@@ -82,19 +74,19 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
         </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — its own glass panel, detached below the dock */}
       {menuOpen && (
-        <div className="border-t border-slate-200/70 bg-white/95 backdrop-blur-lg dark:border-white/5 dark:bg-ink-950/95 md:hidden">
-          <ul className="container-content flex flex-col py-2">
+        <div className="glass mx-auto mt-2 max-w-content md:hidden">
+          <ul className="flex flex-col p-2">
             {site.nav.map((item) => (
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
                   onClick={() => setMenuOpen(false)}
-                  className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${
+                  className={`block rounded-2xl px-4 py-2.5 text-sm font-medium transition-colors ${
                     active === item.id
-                      ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400'
-                      : 'text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-white/5'
+                      ? 'bg-signal-500/15 text-signal-600 dark:text-signal-300'
+                      : 'text-ink/70 hover:bg-white/40 dark:text-frost-100/70 dark:hover:bg-white/5'
                   }`}
                 >
                   {item.label}
