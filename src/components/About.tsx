@@ -15,7 +15,7 @@ export function About() {
         <Reveal delay={0.1}>
           <div className="grid grid-cols-2 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="glass glass-hover p-5">
+              <div key={s.label} className="glass-lite glass-lite-hover p-5">
                 <div className="font-mono text-3xl font-bold text-signal-600 dark:text-signal-300 sm:text-4xl">
                   {s.value}
                 </div>

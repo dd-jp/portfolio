@@ -7,7 +7,7 @@ export function Skills() {
     <Section id="skills" eyebrow="What I work with" title="Skills">
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skills.map((group, i) => (
-          <Reveal key={group.category} delay={(i % 3) * 0.06} className="glass glass-hover p-6">
+          <Reveal key={group.category} delay={(i % 3) * 0.06} className="glass-lite glass-lite-hover p-6">
             <h3 className="text-lg font-semibold text-ink dark:text-frost-50">
               {group.category}
             </h3>

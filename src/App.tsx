@@ -15,11 +15,13 @@ export default function App() {
 
   return (
     <>
-      {/* Ambient blob field — the color that refracts through every glass panel on the page */}
+      {/* Ambient blob field — the color that refracts through every glass panel on the page.
+          Static, not animated: an animating blur behind ~25 backdrop-blur panels forces a
+          full recomposite every frame, which is what made the page feel sluggish. */}
       <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -left-24 -top-24 h-[34rem] w-[34rem] rounded-full bg-signal-500/40 blur-[90px] animate-blob-float dark:bg-signal-500/45" />
-        <div className="absolute right-[-8rem] top-1/4 h-[30rem] w-[30rem] rounded-full bg-aurora/35 blur-[90px] animate-blob-float-slow dark:bg-aurora/40" />
-        <div className="absolute bottom-[-6rem] left-1/3 h-[28rem] w-[28rem] rounded-full bg-mint/30 blur-[90px] animate-blob-float dark:bg-mint/30 [animation-delay:-10s]" />
+        <div className="absolute -left-24 -top-24 h-[34rem] w-[34rem] rounded-full bg-signal-500/40 blur-[90px] dark:bg-signal-500/45" />
+        <div className="absolute right-[-8rem] top-1/4 h-[30rem] w-[30rem] rounded-full bg-aurora/35 blur-[90px] dark:bg-aurora/40" />
+        <div className="absolute bottom-[-6rem] left-1/3 h-[28rem] w-[28rem] rounded-full bg-mint/30 blur-[90px] dark:bg-mint/30" />
       </div>
 
       <Navbar theme={theme} onToggleTheme={toggle} />

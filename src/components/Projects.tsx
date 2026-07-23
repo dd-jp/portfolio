@@ -12,7 +12,7 @@ export function Projects() {
             as="article"
             key={p.title}
             delay={(i % 3) * 0.06}
-            className={`glass glass-hover group relative flex flex-col p-6 ${
+            className={`glass-lite glass-lite-hover group relative flex flex-col p-6 ${
               p.featured ? 'sm:col-span-1' : ''
             }`}
           >

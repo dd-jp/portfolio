@@ -19,7 +19,7 @@ export function Experience() {
               )}
             </span>
 
-            <div className="glass glass-hover p-6">
+            <div className="glass-lite glass-lite-hover p-6">
               <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
                 <div>
                   <h3 className="text-xl font-semibold text-ink dark:text-frost-50">

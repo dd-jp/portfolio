@@ -65,6 +65,16 @@
     @apply hover:-translate-y-0.5 hover:border-signal-400/50 hover:bg-white/65 hover:shadow-[0_16px_40px_-12px_rgba(77,141,255,0.35)] dark:hover:bg-white/[0.09] dark:hover:shadow-[0_16px_40px_-12px_rgba(77,141,255,0.25)];
   }
 
+  /* Lighter glass for dense grids: same look at rest, no backdrop-filter so it doesn't
+     force a recomposite of every panel on screen each frame the ambient blobs move. */
+  .glass-lite {
+    @apply relative overflow-hidden rounded-glass border border-white/50 bg-frost-50/90 shadow-[0_4px_16px_-6px_rgba(20,25,60,0.12)] transition-all duration-300 dark:border-white/10 dark:bg-void-800/70 dark:shadow-[0_4px_16px_-6px_rgba(0,0,0,0.4)];
+  }
+
+  .glass-lite-hover {
+    @apply hover:-translate-y-0.5 hover:border-signal-400/50 hover:shadow-[0_10px_28px_-10px_rgba(77,141,255,0.3)] dark:hover:shadow-[0_10px_28px_-10px_rgba(77,141,255,0.2)];
+  }
+
   /* Pill data tag on glass */
   .chip {
     @apply inline-flex items-center rounded-chip border border-white/50 bg-white/40 px-2.5 py-1 font-mono text-[11px] font-medium tracking-tight text-ink/70 backdrop-blur-sm dark:border-white/10 dark:bg-white/[0.05] dark:text-frost-100/70;
