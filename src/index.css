@@ -8,7 +8,6 @@
   }
 
   html {
-    scroll-behavior: smooth;
     /* Offset anchored scroll so sticky navbar doesn't cover section headings */
     scroll-padding-top: 6rem;
     -webkit-font-smoothing: antialiased;
@@ -104,6 +103,5 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
   }
 }
