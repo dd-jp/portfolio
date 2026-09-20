@@ -5,6 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" content="#F2F4FA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0A0A14" media="(prefers-color-scheme: dark)" />
 
     <title>Deepak David — Lead UI Engineer & Web Architect</title>
     <meta
@@ -20,7 +22,7 @@
       property="og:description"
       content="Engineering leader & Web Architect with 11 years in UK financial services. React, TypeScript, design systems, micro-frontends & AI-driven engineering."
     />
-    <meta property="og:image" content="/profile-image.jpg" />
+    <meta property="og:image" content="%SITE_URL%/profile-image.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Prevent theme flash: set the class before paint -->
@@ -41,7 +43,15 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>

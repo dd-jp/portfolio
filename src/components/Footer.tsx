@@ -10,7 +10,7 @@ export function Footer() {
         </p>
         <p>
           Built with React, TypeScript &amp; Tailwind ·{' '}
-          <span className="text-ink/40 dark:text-frost-100/40">Glasgow, UK</span>
+          <span className="text-ink/60 dark:text-frost-100/60">Glasgow, UK</span>
         </p>
       </div>
     </footer>
