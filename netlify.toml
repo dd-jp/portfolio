@@ -1,9 +1,25 @@
 [build]
-  command = "yarn build"
+  command = "npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs]
+    fail_deploy_on_score_thresholds = "true"
+    output_path = "reports/lighthouse.html"
+
+  [plugins.inputs.thresholds]
+    performance = 0.9
+    accessibility = 0.9
+    best-practices = 0.9
+    seo = 0.9
+
+  [plugins.inputs.settings]
+    preset = "desktop"
 
 # Single-page app: serve index.html for any unknown path (defensive; the site uses hash anchors).
 [[redirects]]

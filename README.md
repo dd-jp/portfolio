@@ -20,16 +20,16 @@ as a static site on [Netlify](https://www.netlify.com).
 - [Vite](https://vite.dev) + [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS](https://tailwindcss.com)
 - [Framer Motion](https://www.framer.com/motion/) · [lucide-react](https://lucide.dev)
-- Yarn 4 (node-modules linker)
+- npm
 
 ## 📦 Scripts
 
 ```bash
-yarn install     # install dependencies
-yarn dev         # start the dev server (http://localhost:5173)
-yarn build       # typecheck + production build to dist/
-yarn preview     # preview the production build locally
-yarn typecheck   # run tsc --noEmit
+npm install      # install dependencies
+npm run dev      # start the dev server (http://localhost:5173)
+npm run build    # typecheck + production build to dist/
+npm run preview  # preview the production build locally
+npm run typecheck  run tsc --noEmit
 ```
 
 ## 📊 Analytics (optional, free)

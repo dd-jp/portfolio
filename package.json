@@ -19,6 +19,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@netlify/plugin-lighthouse": "^6.0.4",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "@vitejs/plugin-react": "^4.3.4",
