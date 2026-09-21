@@ -1,14 +1,3 @@
-export interface SocialLink {
-  name: 'GitHub' | 'LinkedIn' | 'Email';
-  label: string;
-  url: string;
-}
-
-export interface NavItem {
-  id: string;
-  label: string;
-}
-
 export const site = {
   name: 'Deepak David',
   fullName: 'Deepak David Joseph Periyanayagam',
